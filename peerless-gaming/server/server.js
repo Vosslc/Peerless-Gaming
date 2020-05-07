@@ -6,7 +6,8 @@ const session = require("express-session");
 const { SERVER_PORT, CONNECTION_STRING, SECRET } = process.env;
 
 // Controllers 
-const apexCtrl = require("./controllers/apexCtrl")
+const trnApexCtrl = require("./controllers/trnApexCtrl")
+
 
 const app = express();
 
@@ -22,7 +23,7 @@ app.use(
 );
 
 // Apex Tracker Endpoints
-app.get("public-api.tracker.gg/v2/apex/standard/profile", apexCtrl.getProfileStats);
+// app.get("public-api.tracker.gg/v2/apex/standard/profile", trnApexCtrl.getProfileStats);
 
 massive(CONNECTION_STRING).then(database => {
   app.set("db", database);
