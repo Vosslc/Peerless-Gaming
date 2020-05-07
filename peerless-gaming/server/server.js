@@ -28,6 +28,6 @@ app.use(
 massive(CONNECTION_STRING).then(database => {
   app.set("db", database);
   app.listen(SERVER_PORT, () =>
-  console.log(`peerless gamers listening on port ${SERVER_PORT}`)
+  console.log(`peerless gamers running in ${process.env.NODE_ENV} mode on port ${SERVER_PORT}`)
   );
 });
